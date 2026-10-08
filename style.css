@@ -1,0 +1,276 @@
+
+
+:root {
+    --forest: #283618;   /* background */
+    --moss:   #606c38;   /* buttons, placeholders */
+    --cream:  #FEFAE0;   /* text, borders */
+    --ochre:  #DDA15E;   /* hover, focus, links */
+    --black:  #000000;   /* hard shadows */
+
+    --radius: 20px;
+    --border: 3px solid var(--cream);
+    --shadow: 5px 5px 0 var(--black);
+    --shadow-pressed: 2px 2px 0 var(--black);
+
+    --font: "Bricolage Grotesque", Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--forest);
+    color: var(--cream);
+}
+
+.page {
+    max-width: 1100px;
+    min-height: 94vh;
+    margin: 25px auto;
+    padding: 20px 38px;
+}
+
+/* ------------------------------ */
+/* Navigation                     */
+/* ------------------------------ */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    max-width: 900px;   /* add */
+    margin: 0 auto;     /* add */
+}
+
+.nav-button,
+.project-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+
+    background-color: var(--moss);
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-button {
+    width: 32%;
+    padding: 15px 30px;
+    font-size: 28px;
+}
+
+.nav-button:hover,
+.project-link:hover {
+    background-color: var(--ochre);
+    color: var(--forest);
+    transform: translate(3px, 3px);
+    box-shadow: var(--shadow-pressed);
+}
+
+/* Current page */
+.nav-button[aria-current="page"] {
+    background-color: var(--cream);
+    color: var(--forest);
+}
+
+/* Keyboard focus */
+a:focus-visible {
+    outline: 3px solid var(--ochre);
+    outline-offset: 4px;
+}
+
+/* ------------------------------ */
+/* About page                     */
+/* ------------------------------ */
+
+.about {
+    display: flex;
+    align-items: center;
+    gap: clamp(40px, 7vw, 90px);
+
+    max-width: 900px;
+    margin: clamp(60px, 15vh, 200px) auto 0;
+}
+
+.profile-image {
+    width: 40%;
+    max-width: 380px;
+    aspect-ratio: 3 / 4;
+
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: 8px 8px 0 var(--ochre);
+    background-color: var(--moss);
+
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+    padding-top: 20px;
+}
+
+.about-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 30px;
+}
+
+.about-text p {
+    max-width: 55ch;
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* ------------------------------ */
+/* Projects page                  */
+/* ------------------------------ */
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    max-width: 900px;
+    margin: clamp(40px, 8vh, 90px) auto 0;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Every second project flips sides */
+.project:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.project-image {
+    flex: 1 1 50%;
+    aspect-ratio: 4 / 3;
+
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background-color: var(--moss);
+
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-text {
+    flex: 1 1 50%;
+}
+
+.project-text h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.project-text p {
+    max-width: 45ch;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.project-link {
+    display: inline-flex;
+    padding: 12px 26px;
+    font-size: 20px;
+}
+
+/* ------------------------------ */
+/* Mobile                         */
+/* ------------------------------ */
+
+@media (max-width: 768px) {
+
+    .page {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .nav-button {
+        width: 50%;
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    .about {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .profile-image {
+        width: 100%;
+        max-width: none;
+    }
+
+    .about-text {
+        padding-top: 0;
+    }
+
+    .about-text p {
+        font-size: 18px;
+    }
+
+    .projects {
+        gap: 50px;
+    }
+
+    .project,
+    .project:nth-child(even) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+    }
+
+    .project-text p {
+        font-size: 18px;
+    }
+}
+
+/* ------------------------------ */
+/* Respect reduced motion         */
+/* ------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-button,
+    .project-link {
+        transition: none;
+    }
+}
+
