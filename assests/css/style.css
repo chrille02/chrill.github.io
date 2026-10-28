@@ -35,7 +35,7 @@ body {
 }
 
 /* ------------------------------ */
-/* Navigation                     */
+/* navigation                     */
 /* ------------------------------ */
 
 .navbar {
@@ -83,20 +83,19 @@ body {
     box-shadow: var(--shadow-pressed);
 }
 
-/* Current page */
+/* current page */
 .nav-button[aria-current="page"] {
     background-color: var(--cream);
     color: var(--forest);
 }
 
-/* Keyboard focus */
 a:focus-visible {
     outline: 3px solid var(--ochre);
     outline-offset: 4px;
 }
 
 /* ------------------------------ */
-/* About page                     */
+/* about page                     */
 /* ------------------------------ */
 
 .about {
@@ -148,7 +147,7 @@ a:focus-visible {
 }
 
 /* ------------------------------ */
-/* Projects page                  */
+/* projects page                  */
 /* ------------------------------ */
 
 .projects {
@@ -214,7 +213,7 @@ a:focus-visible {
 }
 
 /* ------------------------------ */
-/* Programs I use                 */
+/* programs                       */
 /* ------------------------------ */
 
 .tools {
@@ -256,7 +255,7 @@ a:focus-visible {
     object-fit: contain;
 }
 
-/* Pop-up text on each tile */
+/* pop-up text on each tile */
 .tool {
     position: relative;
     cursor: help;
@@ -303,7 +302,7 @@ a:focus-visible {
 }
 
 /* ------------------------------ */
-/* Project sub pages              */
+/* project sub pages              */
 /* ------------------------------ */
 
 .project-page {
@@ -326,7 +325,7 @@ a:focus-visible {
     margin-bottom: 32px;
 }
 
-/* Quick facts box */
+/* quick facts box */
 .project-meta {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -397,7 +396,7 @@ a:focus-visible {
 }
 
 /* ------------------------------ */
-/* Mobile                         */
+/* mobile                         */
 /* ------------------------------ */
 
 @media (max-width: 768px) {
@@ -456,7 +455,7 @@ a:focus-visible {
 }
 
 /* ------------------------------ */
-/* Respect reduced motion         */
+/* respect reduced motion         */
 /* ------------------------------ */
 
 @media (prefers-reduced-motion: reduce) {
